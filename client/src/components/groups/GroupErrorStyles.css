@@ -1,0 +1,66 @@
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+.alert-danger.shake {
+  animation: shake 0.8s ease-in-out;
+}
+
+.error-badge {
+  background-color: var(--danger-red);
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes pulse-error {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.alert-danger.pulse {
+  animation: pulse-error 1.5s infinite;
+  background-color: rgba(231, 76, 60, 0.4);
+  border: 1px solid rgba(231, 76, 60, 0.7);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  padding: 1rem 1.25rem;
+}
+
+.alert-success {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+}

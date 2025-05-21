@@ -1,0 +1,423 @@
+/* Import variables from other components */
+:root {
+  /* Updated color scheme - greenish blue */
+  --primary-teal: #16a085;
+  --light-teal: #1abc9c;
+  --dark-teal: #0e6655;
+  --teal-gradient: linear-gradient(135deg, #0e6655, #16a085);
+  
+  --dark-green-1: rgba(22, 160, 133, 0.5);
+  --dark-green-2: rgba(14, 102, 85, 0.7);
+  --dark-green-3: rgba(10, 80, 70, 0.8);
+  
+  --button-green: #1abc9c;
+  --button-green-hover: #16a085;
+  --highlight-yellow: #f1c40f;
+  --danger-red: #e74c3c;
+  --danger-red-hover: #c0392b;
+  --danger-orange: #e67e22;
+  --danger-orange-hover: #d35400;
+  
+  /* Money indication colors */
+  --money-owed: #e67e22;   /* Orange for money owed */
+  --money-receive: #2ecc71; /* Green for money to receive */
+  
+  /* Dark blue colors for inner containers */
+  --dark-blue-1: rgba(26, 37, 48, 0.85);
+  --dark-blue-2: rgba(20, 30, 40, 0.9);
+  --dark-blue-3: rgba(15, 25, 35, 0.95);
+  --blue-gradient: linear-gradient(135deg, #1a2530, #2c3e50);
+  
+  /* Dashboard colors */
+  --dashboard-primary: #2c3e50;
+  --dashboard-secondary: #3498db;
+  --dashboard-highlight: #2980b9;
+  --dashboard-accent: #1abc9c;
+  --dashboard-dark: #1a2530;
+  --dashboard-text: #f8f9fa;
+  --dashboard-text-muted: #bdc3c7;
+}
+
+.landing {
+  position: relative;
+  background: var(--blue-gradient);
+  height: 100vh;
+  width: 100%;
+  margin-top: -70px; /* To compensate for the increased navbar height */
+  color: white;
+}
+
+.landing-inner {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding-top: 80px; /* Increased space from top */
+}
+
+.landing-container {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Custom logo styling for the landing page */
+.landing-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  margin-top: 1rem;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.landing-logo:hover {
+  transform: scale(1.05);
+}
+
+.landing-logo i {
+  font-size: 4.5rem;
+  margin-right: 1.2rem;
+  color: var(--light-teal);
+  background: var(--teal-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
+  animation: float 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.landing-logo:hover i {
+  animation: spin 3s ease-in-out infinite;
+}
+
+.landing-logo-text {
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.landing-logo-highlight {
+  color: var(--light-teal);
+  position: relative;
+}
+
+.landing-logo-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0.2rem;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--teal-gradient);
+  border-radius: 2px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.landing-logo:hover .landing-logo-highlight::after {
+  transform: scaleX(1.2) translateY(-2px);
+  opacity: 0.8;
+}
+
+.landing-content {
+  width: 50%;
+  padding-right: 3rem;
+  text-align: left;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.landing h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.landing h1 .text-highlight {
+  color: var(--light-teal);
+  position: relative;
+  display: inline-block;
+}
+
+.landing-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.icon-item {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  animation: fadeIn 0.5s ease-out forwards;
+  background-color: var(--dark-blue-1);
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.icon-item:nth-child(1) {
+  color: var(--light-teal);
+  animation-delay: 0.2s;
+}
+
+.icon-item:nth-child(2) {
+  color: var(--dashboard-secondary);
+  animation-delay: 0.4s;
+}
+
+.icon-item:nth-child(3) {
+  color: var(--money-owed);
+  animation-delay: 0.6s;
+}
+
+.icon-item:nth-child(4) {
+  color: var(--highlight-yellow);
+  animation-delay: 0.8s;
+}
+
+.landing-description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--dashboard-text-muted);
+  max-width: 500px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.signup-button {
+  display: inline-block;
+  background: var(--teal-gradient);
+  color: white;
+  padding: 0.8rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.signup-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.landing-platforms {
+  font-size: 0.95rem;
+  color: var(--dashboard-text-muted);
+}
+
+.landing-platforms i {
+  margin: 0 0.25rem;
+  color: var(--light-teal);
+}
+
+.landing-graphic {
+  width: 50%;
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pattern-graphic {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  animation: fadeIn 1s ease-out;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpolygon fill='%232c3e50' points='0,0 50,0 25,50'/%3E%3Cpolygon fill='%2316a085' points='50,0 100,0 75,50'/%3E%3Cpolygon fill='%232c3e50' points='100,0 100,50 75,50'/%3E%3Cpolygon fill='%2316a085' points='0,0 0,50 25,50'/%3E%3Cpolygon fill='%2316a085' points='25,50 0,50 0,100 50,100'/%3E%3Cpolygon fill='%232c3e50' points='75,50 100,50 100,100 50,100'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Add a stylish info box */
+.info-box {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 280px;
+  background-color: var(--dark-blue-1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border-left: 4px solid var(--light-teal);
+  animation: slideUp 0.6s ease-out 0.5s forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.info-box h3 {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.info-box p {
+  font-size: 0.9rem;
+  color: var(--dashboard-text-muted);
+  margin-bottom: 0;
+}
+
+.info-icon {
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--light-teal);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 992px) {
+  .landing-container {
+    flex-direction: column;
+    padding: 3rem 2rem;
+  }
+  
+  .landing-content {
+    width: 100%;
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .landing-logo {
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+  
+  .landing h1 {
+    font-size: 2.75rem;
+  }
+  
+  .landing-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .landing-icons {
+    justify-content: center;
+  }
+  
+  .landing-graphic {
+    width: 80%;
+    height: 300px;
+  }
+  
+  .info-box {
+    position: relative;
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-inner {
+    padding-top: 100px;
+  }
+  
+  .landing h1 {
+    font-size: 2.3rem;
+  }
+  
+  .landing-description {
+    font-size: 1.1rem;
+  }
+  
+  .signup-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-logo i {
+    font-size: 2.5rem;
+  }
+  
+  .landing-logo-text {
+    font-size: 1.8rem;
+  }
+  
+  .landing h1 {
+    font-size: 2rem;
+  }
+  
+  .icon-item {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+} 

@@ -1,0 +1,23 @@
+# Dependency directories
+node_modules/
+dist/
+dist-ssr/
+
+# Environment variables
+.env
+
+# Editor directories and files
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Vite
+.vite/
+*.vite
+
+# Local overrides
+local.settings.json
+
+uploads/

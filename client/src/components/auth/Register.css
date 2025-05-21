@@ -1,0 +1,34 @@
+/* Register form styles */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"] {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.form-group input:focus {
+  border-color: #17a2b8;
+  outline: none;
+}
+
+.my-1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.my-1 a {
+  color: #ffffff; /* White color for better visibility on dark background */
+  font-weight: 600;
+  text-decoration: underline;
+  font-size: 1.08rem;
+}
+.my-1 a:hover {
+  color: #ffffff; /* Keep white color on hover */
+  text-decoration: underline;
+}

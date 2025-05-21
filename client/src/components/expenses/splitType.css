@@ -1,0 +1,25 @@
+/* Split type options styling */
+.split-type-options {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.split-type-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.split-type-option input[type="radio"] {
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+}
+
+.split-type-option label {
+  display: inline-block;
+  margin: 0;
+  font-weight: 500;
+  cursor: pointer;
+}

@@ -1,0 +1,74 @@
+/* Add the new settlement status styles */
+.split-item.pending-settlement {
+  background-color: rgba(255, 193, 7, 0.1);
+  position: relative;
+}
+
+.split-item.pending-settlement:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: #ffc107;
+  border-radius: 2px;
+}
+
+.split-item.settled {
+  background-color: rgba(40, 167, 69, 0.1);
+  position: relative;
+}
+
+.split-item.settled:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: #28a745;
+  border-radius: 2px;
+}
+
+.pending-badge {
+  background-color: #ffc107;
+  color: #212529;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: pulse 2s infinite;
+  margin-right: 0.5rem;
+}
+
+.settled-badge {
+  background-color: #28a745;
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.settlement-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
